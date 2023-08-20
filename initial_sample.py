@@ -62,7 +62,7 @@ class RDSampler(object):
         return clustered_dataset
 
     def sample(self, initial_budgets: int, predef_clusters: int = 5, max_iter: int = 1000, with_corner: bool = False):
-        is_corner_sample = (initial_budgets > 15) or with_corner
+        is_corner_sample = (initial_budgets > 16) or with_corner
         if is_corner_sample:
             self.cornerSampling(self.num_corner_points)
         

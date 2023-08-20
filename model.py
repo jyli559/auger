@@ -484,7 +484,7 @@ def initialize_dkl_gp(
 ) -> DKLGP:
     return DKLGP(x, y, mlp_output_dim=mlp_output_dim)
 
-def initialize_rdnForest(
+def initialize_rdn_forest(
     x: torch.Tensor, y: torch.Tensor
 ):
     model = RandomForestModel(n_estimators=512)
