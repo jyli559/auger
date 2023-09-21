@@ -16,6 +16,7 @@ from gpytorch.means.constant_mean import ConstantMean
 from gpytorch.kernels.scale_kernel import ScaleKernel
 from gpytorch.kernels.index_kernel import IndexKernel
 from gpytorch.kernels.matern_kernel import MaternKernel
+from gpytorch.kernels.rbf_kernel import RBFKernel
 from gpytorch.priors.lkj_prior import LKJCovariancePrior
 from botorch.models.gpytorch import MultiTaskGPyTorchModel
 from botorch.models.transforms.input import InputTransform
@@ -125,6 +126,10 @@ class MOGP(ExactGP, MultiTaskGPyTorchModel):
                 ),
                 outputscale_prior=GammaPrior(2.0, 0.15),
             )
+            # self.covar_module = ScaleKernel(
+            #     base_kernel=RBFKernel(ard_num_dims=d, lengthscale_prior=GammaPrior(3.0, 6.0)),
+            #     outputscale_prior=GammaPrior(2.0, 0.15),
+            # )
         else:
             self.covar_module = covar_module
 
