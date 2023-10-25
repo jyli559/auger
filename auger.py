@@ -6,7 +6,7 @@ from copy import deepcopy
 
 
 def auger(idx: int = 0):
-	problem = create_dse_problem("./dataset/TRAM.csv")
+	problem = create_dse_problem("./dataset/UPTRA-1.csv")
 	explorer = create_explorer(problem)
 
 	explorer.initialize()
